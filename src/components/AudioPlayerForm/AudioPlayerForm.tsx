@@ -50,10 +50,6 @@ class AudioPlayerForm extends React.Component {
     isPaused = false;
     audioContext = createAudioContext();
 
-    constructor(props : any) {
-        super(props);
-    }
-
     play = (event : any) : void => {
       event.preventDefault();
 

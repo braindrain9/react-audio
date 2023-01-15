@@ -42,34 +42,20 @@ class AudioPlayerForm extends React.Component {
     textarea2 : any;
     tempoInput : any;
     osctypeInput : any;
-    isPaused;
-    has2Outputs;
     oscillator : any;
     gainNode : any;
     time : any;
-    counter : number;
-    audioContext : any;
+    counter = 0;
+    has2Outputs = false;
+    isPaused = false;
+    audioContext = createAudioContext();
 
     constructor(props : any) {
         super(props);
-
-        this.counter = 0;
-        // this.playButton = React.createRef<HTMLButtonElement>();
-        // this.stopButton = React.createRef<HTMLButtonElement>();
-        // this.textarea = React.createRef<HTMLTextAreaElement>();
-        // this.textarea2 = React.createRef<HTMLTextAreaElement>();
-        // this.tempoInput = React.createRef<HTMLSelectElement>();
-        // this.osctypeInput = React.createRef<HTMLSelectElement>();
-        this.audioContext = createAudioContext();
-
-        this.isPaused = false;
-        this.has2Outputs = false;
     }
 
     play = (event : any) : void => {
       event.preventDefault();
-
-      console.log(this, 'this');
 
       this.stopButton.disabled = false;
       this.textarea.disabled = true;
@@ -229,6 +215,7 @@ class AudioPlayerForm extends React.Component {
     }
 
     componentDidMount() {
+        // TODO
         // this.playButton = React.createRef<HTMLButtonElement>();
         // this.stopButton = React.createRef<HTMLButtonElement>();
         // this.textarea = React.createRef<HTMLTextAreaElement>();
